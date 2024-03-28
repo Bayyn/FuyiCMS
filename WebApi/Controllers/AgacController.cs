@@ -19,7 +19,7 @@ namespace WebApi.Controllers
             _AgacService = AgacService;
         }
 
-
+        //getall
         [HttpGet]
         public IActionResult Get()
         {
