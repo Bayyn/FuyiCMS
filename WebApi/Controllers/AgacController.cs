@@ -21,16 +21,16 @@ namespace WebApi.Controllers
 
         //getall
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get(int langcode)
         {
-            return Ok(_AgacService.GetAll());
+            return Ok(_AgacService.GetAll(langcode));
         }
 
         
         [HttpPost]
         public IActionResult Add(Agac Agac)
         {
-            Agac createdBrandResponse = _AgacService.Add(Agac);
+            _AgacService.Add(Agac);
 
             return Ok(Agac);
         }

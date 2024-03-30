@@ -12,6 +12,7 @@
     <None Remove="Dtos\" />
     <None Remove="Dtos\Requests\" />
     <None Remove="Dtos\Responses\" />
+    <None Remove="Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstracts\" />
@@ -19,6 +20,7 @@
     <Folder Include="Dtos\" />
     <Folder Include="Dtos\Requests\" />
     <Folder Include="Dtos\Responses\" />
+    <Folder Include="Functions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />

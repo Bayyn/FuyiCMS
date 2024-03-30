@@ -1,6 +1,7 @@
 ﻿using System;
 using DataAccess.Abstracts;
 using Entities.Concretes;
+using Newtonsoft.Json;
 
 namespace DataAccess.Concretes
 {
@@ -9,22 +10,24 @@ namespace DataAccess.Concretes
         List<Agac> _Agacs = new();
         public AgacDal()
 		{
-            Agac newAgac = new();
-
-            newAgac.AgacID = 1;
-            newAgac.AgacName1 = "Test";
-            _Agacs.Add(newAgac);
-		}
+            StreamReader r = new StreamReader("./Data/Database.json");
+            DB db = JsonConvert.DeserializeObject<DB>(r.ReadToEnd())!;
+            _Agacs = db.Agac;
+        }
 
         public void Add(Agac Agac)
-        {
+        { 
             _Agacs.Add(Agac);
         }
 
         public List<Agac> GetAll()
         {
+            StreamReader r = new StreamReader("./Data/Database.json");
+            DB db = JsonConvert.DeserializeObject<DB>(r.ReadToEnd())!;
+            _Agacs = db.Agac;
             return _Agacs;
         }
+
     }
 }
 

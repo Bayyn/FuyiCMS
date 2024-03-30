@@ -1,5 +1,7 @@
 ﻿using System;
 using Business.Abstracts;
+using Business.Dtos;
+using Business.Functions;
 using DataAccess.Abstracts;
 using Entities.Concretes;
 
@@ -21,10 +23,10 @@ public class AgacManager : IAgacService
         return Agac;
     }
 
-    public List<Agac> GetAll()
+    public List<AgacMain> GetAll(int langid)
     {
-        List<Agac> Agacs = _AgacDal.GetAll();
-
+        ConvertMain convertMain = new ConvertMain();
+        List<AgacMain> Agacs = convertMain.ConvertAgac(_AgacDal.GetAll(), langid);
         return Agacs;
     }
 }

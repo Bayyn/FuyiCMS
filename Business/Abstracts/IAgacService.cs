@@ -1,4 +1,5 @@
 ﻿using System;
+using Business.Dtos;
 using Entities.Concretes;
 
 namespace Business.Abstracts;
@@ -6,6 +7,6 @@ namespace Business.Abstracts;
 public interface IAgacService
 {
     Agac Add(Agac Agac);
-    List<Agac> GetAll();
+    List<AgacMain> GetAll(int langid);
 }
 
